@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/button";
 
 interface AuthScreenProps {
-  onAuth: () => void
-  onSkip: () => void
+  onAuth: () => void;
+  onSkip: () => void;
 }
 
 export default function AuthScreen({ onAuth, onSkip }: AuthScreenProps) {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   if (isMobile) {
     return (
@@ -46,11 +46,15 @@ export default function AuthScreen({ onAuth, onSkip }: AuthScreenProps) {
         <div className="relative z-10 flex flex-col justify-center min-h-screen p-6">
           <div className="mb-8">
             <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 mb-8 shadow-xl">
-              <h1 className="text-white text-3xl font-bold mb-3 tracking-wide">WELCOME TO</h1>
+              <h1 className="text-white text-3xl font-bold mb-3 tracking-wide">
+                WELCOME TO
+              </h1>
               <h2 className="text-white text-5xl font-bold mb-4 tracking-wider">
                 CAMTOUR <span className="text-2xl">CHATBOT!</span>
               </h2>
-              <p className="text-white/90 text-xl italic font-light">Your virtual travel assistant.</p>
+              <p className="text-white/90 text-xl italic font-light">
+                Your virtual travel assistant.
+              </p>
             </div>
 
             <div className="text-center mb-8">
@@ -68,7 +72,9 @@ export default function AuthScreen({ onAuth, onSkip }: AuthScreenProps) {
               REGISTER
             </Button>
 
-            <p className="text-center text-black font-medium">or continue with</p>
+            <p className="text-center text-black font-medium">
+              or continue with
+            </p>
 
             <Button
               onClick={onAuth}
@@ -98,7 +104,7 @@ export default function AuthScreen({ onAuth, onSkip }: AuthScreenProps) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   // Desktop version
@@ -107,7 +113,9 @@ export default function AuthScreen({ onAuth, onSkip }: AuthScreenProps) {
       <div className="max-w-md w-full">
         <div className="bg-white rounded-3xl shadow-2xl p-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome to CamTour</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              Welcome to CamTour
+            </h1>
             <p className="text-gray-600">Ready to discover Cambodia?</p>
           </div>
 
@@ -124,7 +132,9 @@ export default function AuthScreen({ onAuth, onSkip }: AuthScreenProps) {
                 <div className="w-full border-t border-gray-300" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">or continue with</span>
+                <span className="px-2 bg-white text-gray-500">
+                  or continue with
+                </span>
               </div>
             </div>
 
@@ -159,5 +169,5 @@ export default function AuthScreen({ onAuth, onSkip }: AuthScreenProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

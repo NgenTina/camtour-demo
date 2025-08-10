@@ -1,0 +1,15 @@
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.float-blob-1 {
+  animation: float 3s ease-in-out infinite;
+}
+.float-blob-2 {
+  animation: float 4s ease-in-out infinite;
+}
+.float-blob-3 {
+  animation: float 2.5s ease-in-out infinite;
+}

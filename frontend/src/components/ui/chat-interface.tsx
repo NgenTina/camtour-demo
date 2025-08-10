@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/button";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/card";
 import { Bot, Send, User, ImageIcon, Settings, Menu, X } from "lucide-react";
 import { useChat } from "ai/react";
 
@@ -27,7 +27,6 @@ export default function ChatInterface() {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Mobile menu overlay */}
       {isMobile && sidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40"
@@ -35,7 +34,6 @@ export default function ChatInterface() {
         />
       )}
 
-      {/* Sidebar */}
       <div
         className={`${
           isMobile
@@ -43,7 +41,7 @@ export default function ChatInterface() {
             : "relative"
         } ${
           isMobile && !sidebarOpen ? "-translate-x-full" : "translate-x-0"
-        } w-16 bg-gray-200 flex flex-col items-center py-4 space-y-4`}
+        } w-16 bg-gray-200 flex flex-col items-c  enter py-4 space-y-4`}
       >
         {isMobile && (
           <Button

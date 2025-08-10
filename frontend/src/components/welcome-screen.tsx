@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { Button } from "@/components/button";
 
 interface WelcomeScreenProps {
   onGetStarted: () => void;
@@ -23,7 +22,7 @@ export default function WelcomeScreen({ onGetStarted }: WelcomeScreenProps) {
   if (isMobile) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-orange-200 via-orange-300 to-orange-400 p-6">
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="flex flex-col items-center justify-center">
           <div className="text-center mb-8">
             <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-6 mb-8">
               <h1 className="text-3xl font-bold text-white mb-2">WELCOME TO</h1>
@@ -94,54 +93,8 @@ export default function WelcomeScreen({ onGetStarted }: WelcomeScreenProps) {
   // Desktop version
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-200 via-orange-300 to-orange-400 relative overflow-hidden">
-      <div className="absolute right-0 top-0 w-1/2 h-full">
-        <svg
-          viewBox="0 0 800 400"
-          className="absolute top-0 right-0 w-[500px] h-[300px]"
-        >
-          <defs>
-            <clipPath id="blob">
-              <path d="M765,348Q704,296,710,248Q716,200,717,139.5Q718,79,660,57Q602,35,546.5,48.5Q491,62,425.5,36.5Q360,11,307,38.5Q254,66,217.5,109.5Q181,153,128.5,176.5Q76,200,108.5,244Q141,288,170,335.5Q199,383,254.5,398.5Q310,414,368.5,410.5Q427,407,470.5,395.5Q514,384,575.5,398.5Q637,413,686.5,387.5Q736,362,765,348Z" />
-            </clipPath>
-          </defs>
-          <image
-            href="/images/cambodia-island.png"
-            width="800"
-            height="400"
-            clipPath="url(#blob)"
-            preserveAspectRatio="xMidYMid slice"
-          />
-        </svg>
-
-        {/* 
-        <div
-          className="absolute top-[35%] right-0 w-[500px] h-[320px] overflow-hidden"
-          style={{
-            borderRadius: "40% 0 0 40%",
-          }}
-        >
-          <Image
-            src="/images/ankor-wat-01.jpg"
-            alt="Angkor Wat temple"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-
-        <div className="absolute bottom-8 right-20 w-[300px] h-[300px] overflow-hidden rounded-full">
-          <Image
-            src="/images/amok-dish.jpg"
-            alt="Cambodian cuisine"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div> */}
-      </div>
-
       {/* Main content */}
-      <div className="relative z-10 flex items-center min-h-screen px-16">
+      <div className="relative z-10 flex items-center h-full">
         {/* Left side - Content */}
         <div className="max-w-2xl">
           <div className="flex justify-center">
@@ -160,6 +113,7 @@ export default function WelcomeScreen({ onGetStarted }: WelcomeScreenProps) {
             READY TO DISCOVER TEMPLE, FOOD AND HIDDEN GEMS?
           </p>
 
+          {/* right side of blobs */}
           <div className="space-y-4 max-w-md mx-auto flex flex-col items-center">
             <Button
               onClick={onGetStarted}
