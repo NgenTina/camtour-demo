@@ -8,12 +8,13 @@ import { Bot, Send, User, ImageIcon, Settings, Menu, X } from "lucide-react";
 import { useChat } from "ai/react";
 
 export default function ChatInterface() {
+  
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
-      api: "/api/chat",
+      api: "http://localhost:8000/chat", // FastAPI endpoint
     });
 
   useEffect(() => {

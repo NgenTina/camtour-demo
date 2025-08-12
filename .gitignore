@@ -48,3 +48,15 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
+
+backend/
+*.pyc
+__pycache__/
+
+*venv/
+.venv/
+
+*Driver/
+
+cache/
+.env
